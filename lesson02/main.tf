@@ -123,7 +123,7 @@ resource "aws_launch_configuration" "lc" {
   security_groups             = [aws_security_group.web.id]
   user_data                   = data.template_file.deploy_sh.rendered
   associate_public_ip_address = var.associate_public_ip_address
-  key_name                    = "oddo"
+  key_name                    = "odoo"
   # spot_price                  = "0.02"
 
   lifecycle {
