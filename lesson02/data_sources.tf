@@ -13,7 +13,7 @@ data "aws_ami" "amazon_linux" {
     name = "name"
 
     values = [
-      "amzn-ami-hvm-*-x86_64-gp2",
+      "amzn2-ami-hvm-*-x86_64-gp2",
     ]
   }
 
@@ -38,4 +38,3 @@ data "template_file" "deploy_sh" {
     HOSTNAME     = "${var.metadata["appname"]}-${var.env}-ec2-${var.metadata["appversion"]}"
   }
 }
-
