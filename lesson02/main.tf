@@ -11,6 +11,10 @@ provider "aws" {
 #   }
 # }
 
+
+
+
+
 #--------------------------------------------------------------
 # default VPC
 # https://www.terraform.io/docs/providers/aws/r/default_vpc.html
