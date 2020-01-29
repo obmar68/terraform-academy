@@ -14,7 +14,7 @@ jobs:
 
     - name: Install Terraform
       env:
-        TERRAFORM_VERSION: "0.12.15"
+        TERRAFORM_VERSION: "0.12.20"
       working-directory: ./lesson02
       run: |
         tf_version=$TERRAFORM_VERSION
