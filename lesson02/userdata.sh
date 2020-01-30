@@ -9,6 +9,11 @@ sudo service docker start
  #Add ec2-user to the docker group
 #All commands here are executed as super admin
 #but still, let's add the ec2-user to the docker group
-usermod -a -G docker ec2-user 
+usermod -a -G docker ec2-user
 #Run the nginx
 docker run -d -p 80:80 --restart=always ${docker_image}:${docker_tag}
+
+## Show the instanceid
+instanceid=$(curl 169.254.169.254/latest/meta-data/instance-id)
+dockerfs=$(df -h | grep merged| awk '{print $NF}' )
+sed -i "s:using nginx:<b>${instanceid}<b>:g" ${dockerfs}/usr/share/nginx/html/index.html 
