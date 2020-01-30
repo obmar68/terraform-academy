@@ -3,7 +3,7 @@ variable "min_size" {
 }
 
 variable "max_size" {
-  default = 1
+  default = 2
 }
 
 variable "health_check_grace_period" {
@@ -15,7 +15,7 @@ variable "default_cooldown" {
 }
 
 variable "desired_capacity" {
-  default = 1
+  default = 2
 }
 
 variable "metrics_granularity" {
@@ -25,4 +25,3 @@ variable "metrics_granularity" {
 variable "health_check_type" {
   default = "ELB"
 }
-
