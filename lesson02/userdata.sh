@@ -14,6 +14,6 @@ usermod -a -G docker ec2-user
 docker run -d -p 80:80 --restart=always ${docker_image}:${docker_tag}
 
 ## Show the instanceid
-instanceid=$(curl 169.254.169.254/latest/meta-data/instance-id)
-dockerfs=$(df -h | grep merged| awk '{print $NF}' )
-sed -i "s:using nginx:<b>${instanceid}<b>:g" ${dockerfs}/usr/share/nginx/html/index.html 
+#export instanceid=$(curl 169.254.169.254/latest/meta-data/instance-id)
+#export dockerfs=$(df -h | grep merged| awk '{print $NF}' )
+#sed -i "s:using nginx:<b>$instanceid<b>:g" $dockerfs/usr/share/nginx/html/index.html 

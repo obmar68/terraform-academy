@@ -117,7 +117,7 @@ resource "aws_security_group" "web" {
 #--------------------------------------------
 # Role  Instance profile and attachement
 #--------------------------------------------
-
+/*
 resource "aws_iam_role" "ec2_ssm_access_role" {
   name               = "EC2-SSM-role"
   assume_role_policy = <<EOF
@@ -147,7 +147,7 @@ resource "aws_iam_instance_profile" "EC2_profile" {
   name = "SSMEC2Profile"
   role = aws_iam_role.ec2_ssm_access_role.name
 }
-
+*/
 
 #--------------------------------------------------------------
 # Launch configuration
@@ -159,8 +159,8 @@ resource "aws_launch_configuration" "lc" {
   security_groups             = [aws_security_group.web.id]
   user_data                   = data.template_file.deploy_sh.rendered
   associate_public_ip_address = var.associate_public_ip_address
-  key_name                    = "odoo"
-  iam_instance_profile        = aws_iam_instance_profile.EC2_profile.name
+  #key_name                    = "odoo"
+  iam_instance_profile = aws_iam_instance_profile.EC2_profile.name
   # spot_price                  = "0.02"
 
   lifecycle {
