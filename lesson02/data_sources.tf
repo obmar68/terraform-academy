@@ -6,6 +6,10 @@ data "aws_subnet_ids" "vpc_subnets" {
 data "aws_availability_zones" "available" {
 }
 
+data "aws_iam_policy" "SSMEC2Policy" {
+  arn = "arn:aws:iam::aws:policy/service-role/AmazonEC2RoleforSSM"
+}
+
 data "aws_ami" "amazon_linux" {
   most_recent = true
 
