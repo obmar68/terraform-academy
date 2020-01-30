@@ -160,7 +160,7 @@ resource "aws_launch_configuration" "lc" {
   user_data                   = data.template_file.deploy_sh.rendered
   associate_public_ip_address = var.associate_public_ip_address
   #key_name                    = "odoo"
-  iam_instance_profile = aws_iam_instance_profile.EC2_profile.name
+  #iam_instance_profile = aws_iam_instance_profile.EC2_profile.name
   # spot_price                  = "0.02"
 
   lifecycle {
