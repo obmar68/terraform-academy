@@ -15,7 +15,7 @@ variable "default_cooldown" {
 }
 
 variable "desired_capacity" {
-  default = 1
+  default = 2
 }
 
 variable "metrics_granularity" {
