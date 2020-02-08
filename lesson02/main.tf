@@ -143,10 +143,10 @@ resource "aws_iam_policy_attachment" "test-attach" {
   policy_arn = data.aws_iam_policy.SSMEC2Policy.arn
 }
 
-resource "aws_iam_instance_profile" "EC2_profile" {
-  name = "SSMEC2Profile"
-  role = aws_iam_role.ec2_ssm_access_role.name
-}
+#resource "aws_iam_instance_profile" "EC2_profile" {
+#  name = "SSMEC2Profile"
+#  role = aws_iam_role.ec2_ssm_access_role.name
+#}
 
 
 #--------------------------------------------------------------
