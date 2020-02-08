@@ -117,7 +117,7 @@ resource "aws_security_group" "web" {
 #--------------------------------------------
 # Role  Instance profile and attachement
 #--------------------------------------------
-/*
+
 resource "aws_iam_role" "ec2_ssm_access_role" {
   name               = "EC2-SSM-role"
   assume_role_policy = <<EOF
@@ -147,7 +147,7 @@ resource "aws_iam_instance_profile" "EC2_profile" {
   name = "SSMEC2Profile"
   role = aws_iam_role.ec2_ssm_access_role.name
 }
-*/
+
 
 #--------------------------------------------------------------
 # Launch configuration
@@ -196,6 +196,7 @@ resource "aws_autoscaling_group" "asg" {
   lifecycle {
     create_before_destroy = true
   }
+  #
   # A maximum duration that Terraform should wait for ASG instances to be healthy before timing out.
   # wait_for_capacity_timeout = "20m"
   #
